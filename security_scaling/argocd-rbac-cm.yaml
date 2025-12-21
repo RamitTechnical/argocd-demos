@@ -10,6 +10,9 @@ data:
     p, role:developer, applications, get, frontend-team/*, allow
     # Developers can sync applications in 'frontend-team'
     p, role:developer, applications, sync, frontend-team/*, allow 
+    p, role:developer, applications, get, demo-project/*, allow
+    p, role:developer, applications, sync, demo-project/*, allow
+    p, role:developer, applications, update, demo-project/*, allow
     # Admins can perform any action on any application
     p, role:admin, applications, *, *, allow
     # Assign 'developer' role to user 'alice'
