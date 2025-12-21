@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: demo-app
+  namespace: argocd
+spec:
+  project: demo-project          # 👈 ArgoCD Project
+
+  source:
+    repoURL: https://github.com/RamitTechnical/argocd-demos.git
+    targetRevision: main
+    path: manifests
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: demo               # 👈 Kubernetes namespace
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
