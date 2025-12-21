@@ -6,10 +6,10 @@ metadata:
 data:
   # RBAC policy definitions in CSV format
   policy.csv: |
-    # Developers can get applications in 'myproject'
-    p, role:developer, applications, get, myproject/*, allow
-    # Developers can sync applications in 'myproject'
-    p, role:developer, applications, sync, myproject/*, allow 
+    # Developers can get applications in 'frontend-team'
+    p, role:developer, applications, get, frontend-team/*, allow
+    # Developers can sync applications in 'frontend-team'
+    p, role:developer, applications, sync, frontend-team/*, allow 
     # Admins can perform any action on any application
     p, role:admin, applications, *, *, allow
     # Assign 'developer' role to user 'alice'
