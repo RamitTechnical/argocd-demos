@@ -4,8 +4,8 @@ metadata:
   name: argocd-deploy-binding
   namespace: demo
 subjects:
-- kind: ServiceAccount
-  name: rocd-sa
+- kind: User
+  name: alice
   namespace: demo
 roleRef:
   kind: Role
