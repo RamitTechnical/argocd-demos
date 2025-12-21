@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: demo-project
+  namespace: argocd
+spec:
+  sourceRepos:
+  - https://github.com/RamitTechnical/argocd-demos.git
+  destinations:
+  - namespace: demo                # 👈 Kubernetes namespace
+    server: https://kubernetes.default.svc
+
+  namespaceResourceWhitelist:
+  - group: apps
+    kind: Deployment
+  - group: ""
+    kind: Service
+  - group: ""
+    kind: Pod
